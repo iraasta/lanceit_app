@@ -31,11 +31,13 @@ import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.iraasta.lanceit.MainActivity;
 import com.iraasta.lanceit.R;
+import com.iraasta.lanceit.Utilities.Managers.GeoLocationManager;
 
 public class FeedListAdapter extends BaseAdapter {	
 	private Activity activity;
 	private LayoutInflater inflater;
 	private List<FeedItem> feedItems;
+    private GeoLocationManager myLocation;
 	private Random rand;
     private final TextPaint mPaint = new TextPaint();
 
@@ -43,6 +45,7 @@ public class FeedListAdapter extends BaseAdapter {
 	public FeedListAdapter(Activity activity, List<FeedItem> feedItems) {
 		this.activity = activity;
 		this.feedItems = feedItems;
+        setMyLocation();
 	}
 
 	@Override
@@ -86,7 +89,7 @@ public class FeedListAdapter extends BaseAdapter {
 		CharSequence timeAgo = DateUtils.getRelativeTimeSpanString(
 				item.getTimeStamp(),
 				System.currentTimeMillis(), DateUtils.SECOND_IN_MILLIS);
-		timestamp.setText(Long.toString(item.getTimeStamp() % 10000) + "m");
+		timestamp.setText(String.valueOf(Math.round(myLocation.getDistanceFrom(item.getLat(), item.getLng()))*1000) + "m");
 
 		// Chcek for empty status message
 		if (!TextUtils.isEmpty(item.getDesription())) {
@@ -122,4 +125,7 @@ public class FeedListAdapter extends BaseAdapter {
 		return color;
 	}
 
+    public void setMyLocation() {
+        this.myLocation = MainActivity.getGeoLocationManager();
+    }
 }

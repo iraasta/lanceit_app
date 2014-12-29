@@ -1,33 +1,21 @@
-package com.iraasta.lanceit;
+package com.iraasta.lanceit.Controller;
 
 import info.androidhive.listviewfeed.adapter.FeedListAdapter;
-import info.androidhive.listviewfeed.app.AppController;
 import info.androidhive.listviewfeed.data.FeedItem;
 
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
-import java.util.List;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import android.os.AsyncTask;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.android.volley.Cache;
-import com.android.volley.Cache.Entry;
-import com.android.volley.Request.Method;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.VolleyLog;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.iraasta.lanceit.FeedManager.OnDone;
+import com.iraasta.lanceit.Utilities.Managers.FeedManager;
+import com.iraasta.lanceit.Utilities.Managers.FeedManager.OnDone;
+import com.iraasta.lanceit.MainActivity;
+import com.iraasta.lanceit.R;
 
 import de.timroes.swipetodismiss.SwipeDismissList;
 import de.timroes.swipetodismiss.SwipeDismissList.UndoMode;
@@ -86,7 +74,6 @@ public class MainView {
 	
 		swipeLayout = (EnhancedSwipeRefreshLayout) v.findViewById(R.id.swipe_container);
 	    swipeLayout.setOnRefreshListener(new OnRefreshListener() {
-			
 			@Override
 			public void onRefresh() {
 				Toast.makeText(MainActivity.instance, "Refreshing", Toast.LENGTH_SHORT).show();

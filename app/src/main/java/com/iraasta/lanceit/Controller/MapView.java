@@ -1,4 +1,4 @@
-package com.iraasta.lanceit;
+package com.iraasta.lanceit.Controller;
 
 import android.view.View;
 import android.widget.ArrayAdapter;

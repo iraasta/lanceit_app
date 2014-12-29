@@ -1,6 +1,6 @@
 
 
-    <com.iraasta.lanceit.EnhancedSwipeRefreshLayout
+    <com.iraasta.lanceit.Controller.EnhancedSwipeRefreshLayout
         android:id="@+id/swipe_container"
         android:background="@drawable/tlo1"
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -12,5 +12,5 @@
 	        android:layout_width="fill_parent"
 	        android:layout_height="fill_parent"
 	        android:divider="@null" />
-	</com.iraasta.lanceit.EnhancedSwipeRefreshLayout>
+	</com.iraasta.lanceit.Controller.EnhancedSwipeRefreshLayout>
 

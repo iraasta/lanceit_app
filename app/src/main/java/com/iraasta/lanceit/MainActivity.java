@@ -1,66 +1,33 @@
 package com.iraasta.lanceit;
 
+import android.content.Context;
+import android.location.LocationManager;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.text.TextUtils;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
-import android.widget.AbsListView.OnScrollListener;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
-import info.androidhive.listviewfeed.adapter.FeedListAdapter;
-import info.androidhive.listviewfeed.app.AppController;
-import info.androidhive.listviewfeed.data.FeedItem;
 
-import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.List;
+import info.androidhive.listviewfeed.app.AppController;
+
 import java.util.Locale;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.os.Bundle;
-import android.view.Menu;
-import android.widget.ListView;
 
-import com.android.volley.Cache;
-import com.android.volley.Cache.Entry;
 import com.android.volley.Request;
-import com.android.volley.Request.Method;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.VolleyLog;
-import com.android.volley.toolbox.ImageLoader;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-
-import de.timroes.swipetodismiss.SwipeDismissList;
-import de.timroes.swipetodismiss.SwipeDismissList.UndoMode;
-import de.timroes.swipetodismiss.SwipeDismissList.Undoable;
-import info.androidhive.listviewfeed.volley.LruBitmapCache;
+import com.iraasta.lanceit.Controller.AddView;
+import com.iraasta.lanceit.Controller.MainView;
+import com.iraasta.lanceit.Controller.MapView;
+import com.iraasta.lanceit.Utilities.Managers.GeoLocationManager;
 
 public class MainActivity extends ActionBarActivity implements
 ActionBar.TabListener  {
@@ -71,11 +38,14 @@ ActionBar.TabListener  {
     private static MainActivity mInstance;
     SectionsPagerAdapter mSectionsPagerAdapter;
 	public ViewPager mViewPager;
-	
+
 	public static MapView mapView;
 	public static MainView mainView;
 	public static AddView addView;
 	public static MainActivity instance;
+
+    private static GeoLocationManager myLocationManager;
+
 	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -122,6 +92,10 @@ ActionBar.TabListener  {
 					.setTabListener(this));
 		}
 		mViewPager.setCurrentItem(1, false);
+
+        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        myLocationManager = new GeoLocationManager();
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, myLocationManager);
 	}
     public static synchronized MainActivity getInstance() {
         return mInstance;
@@ -262,6 +236,10 @@ ActionBar.TabListener  {
         if (mRequestQueue != null) {
             mRequestQueue.cancelAll(tag);
         }
+    }
+
+    public static GeoLocationManager getGeoLocationManager(){
+        return myLocationManager;
     }
 
 }

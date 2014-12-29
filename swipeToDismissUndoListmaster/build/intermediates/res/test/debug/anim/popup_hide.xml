@@ -4,4 +4,4 @@
 		   android:toAlpha="0.0" 
 		   android:duration="500"
 		   android:repeatCount="0"/>
-</set><!-- From: file:/home/iraasta/Dropbox/JAVA/Projects/studio-projects/LanceIt/swipeToDismissUndoListmaster/src/main/res/anim/popup_hide.xml --><!-- From: file:/home/iraasta/Dropbox/JAVA/Projects/studio-projects/LanceIt/swipeToDismissUndoListmaster/build/intermediates/bundles/debug/res/anim/popup_hide.xml -->
+</set><!-- From: file:/D:/Java%20Workspace/lanceit_app/swipeToDismissUndoListmaster/src/main/res/anim/popup_hide.xml --><!-- From: file:/D:/Java%20Workspace/lanceit_app/swipeToDismissUndoListmaster/build/intermediates/bundles/debug/res/anim/popup_hide.xml -->

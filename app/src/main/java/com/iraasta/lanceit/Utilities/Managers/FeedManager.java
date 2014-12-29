@@ -1,26 +1,18 @@
-package com.iraasta.lanceit;
+package com.iraasta.lanceit.Utilities.Managers;
 
-import info.androidhive.listviewfeed.app.AppController;
+import android.util.Log;
+
 import info.androidhive.listviewfeed.data.FeedItem;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Calendar;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
-
-import javax.xml.transform.ErrorListener;
-import javax.xml.transform.TransformerException;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.app.PendingIntent.OnFinished;
-import android.util.Log;
-
-import com.android.volley.AuthFailureError;
 import com.android.volley.Cache;
 import com.android.volley.Cache.Entry;
 import com.android.volley.Request.Method;
@@ -29,20 +21,59 @@ import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonObjectRequest;
 
+import com.iraasta.lanceit.MainActivity;
+import com.iraasta.lanceit.Utilities.Refference.feedRef;
 
 public class FeedManager {
 
 	private Random rand = new Random();
 	public static List<FeedItem> feedItems;
-	private static String URL_FEED = "http://185.49.12.175:9000/list/get";
-	private static String URL_POST = "http://185.49.12.175:9000/list/add";
+
 
 	private static final String TAG = MainActivity.class.getSimpleName();
 
+    public interface OnDone
+    {
+        public void done();
+    }
+
+    private static void parseJsonFeed(JSONObject response) {
+        try {
+            feedItems.clear();
+            JSONArray feedArray = response.getJSONArray("feeds");
+
+            for (int i = 0; i < feedArray.length(); i++) {
+                JSONObject feedObj = (JSONObject) feedArray.get(i);
+
+                FeedItem item = new FeedItem();
+                item.setId(feedObj.getJSONObject("_id").getString("$oid"));
+                item.setTitle(feedObj.getString("title"));
+                item.setUsername(feedObj.getString("username"));
+                item.setExpiration(feedObj.getJSONObject("expireAt").getInt(
+                        "$date"));
+
+                // Image might be null sometimes
+                item.setDescription(feedObj.getString("description"));
+                item.setTimeStamp(feedObj.getLong("timestamp"));
+                item.setLatLng(feedObj.getString("lat"),
+                        feedObj.getString("lng"));
+                // url might be null sometimes
+
+                feedItems.add(item);
+            }
+
+            // notify data changes to list adapater
+        } catch (JSONException e) {
+            e.printStackTrace();
+
+        }
+
+    }
+
 	public static void getFeed( final OnDone ondone) {
 		Cache cache = MainActivity.getInstance().getRequestQueue().getCache();
-		final Entry entry = cache.get(URL_FEED);
-		JsonObjectRequest jsonReq = new JsonObjectRequest(Method.GET, URL_FEED,
+		final Entry entry = cache.get(feedRef.URL_FEED);
+		JsonObjectRequest jsonReq = new JsonObjectRequest(Method.GET, feedRef.URL_FEED,
 				null, new Response.Listener<JSONObject>() {
 
 					@Override
@@ -72,52 +103,20 @@ public class FeedManager {
 				});
 		MainActivity.getInstance().addToRequestQueue(jsonReq);
 	}
-
-	
-	private static void parseJsonFeed(JSONObject response) {
-		try {
-			feedItems.clear();
-			JSONArray feedArray = response.getJSONArray("feeds");
-
-			for (int i = 0; i < feedArray.length(); i++) {
-				JSONObject feedObj = (JSONObject) feedArray.get(i);
-
-				FeedItem item = new FeedItem();
-				item.setId(feedObj.getJSONObject("_id").getString("$oid"));
-				item.setTitle(feedObj.getString("title"));
-				item.setUsername(feedObj.getString("username"));
-				item.setExpiration(feedObj.getJSONObject("expireAt").getInt(
-						"$date"));
-
-				// Image might be null sometimes
-				item.setDescription(feedObj.getString("description"));
-				item.setTimeStamp(feedObj.getLong("timestamp"));
-				item.setLatLng(feedObj.getString("lat"),
-						feedObj.getString("lng"));
-				// url might be null sometimes
-
-				feedItems.add(item);
-			}
-
-			// notify data changes to list adapater
-		} catch (JSONException e) {
-			e.printStackTrace();
-			
-		}
-		
-	}
 	public static JSONObject parseFeedJson(FeedItem fi) throws JSONException
 	{
 		Calendar c = Calendar.getInstance();
 		JSONObject obj = new JSONObject();
+        GeoLocationManager myLocation = MainActivity.getGeoLocationManager();
 		
 		obj.put("username", randomString(8));
 		obj.put("title", fi.getTitle());
 		obj.put("description", fi.getDesription());
 		obj.put("timestamp", c.getTimeInMillis());
-		obj.put("lat", 0.0);
-		obj.put("lng", 0.0);
-		obj.put("expireAt", new JSONObject().put("$date", fi.getExpiration()) );
+		obj.put("lat", myLocation.getLat());
+		obj.put("lng", myLocation.getLng());
+        Log.d("Debug","Location:" + myLocation.getLat());
+        obj.put("expireAt", new JSONObject().put("$date", fi.getExpiration()) );
 				
 		return obj;
 	}
@@ -127,26 +126,25 @@ public class FeedManager {
 	public static void sendFeed(FeedItem fi,final OnDone ondone)
 	{
 		try {
-			JSONRequestManager.post(URL_POST, parseFeedJson(fi), ondone);
+			JSONRequestManager.post(feedRef.URL_POST, parseFeedJson(fi), ondone);
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	public interface OnDone
-	{
-		public void done();
-	}
+
 	
 	static final String AB = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	static Random rnd = new Random();
 
 	static String randomString( int len ) 
 	{
+
 	   StringBuilder sb = new StringBuilder( len );
 	   for( int i = 0; i < len; i++ ) 
 	      sb.append( AB.charAt( rnd.nextInt(AB.length()) ) );
 	   return sb.toString();
+
 	}
 	
 }

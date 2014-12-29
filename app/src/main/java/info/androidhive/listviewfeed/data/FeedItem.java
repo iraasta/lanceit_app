@@ -9,6 +9,11 @@ public class FeedItem {
 	private LatLng latLng;
 	private int expireIn;
 
+
+    //Fast fix, no time for cocking around...
+    private double lat;
+    private double lng;
+
 	public FeedItem() {
 	}
 
@@ -66,10 +71,21 @@ public class FeedItem {
 	}
 
 	public void setLatLng(String lat, String lng) {
-		this.latLng = new LatLng(Double.parseDouble(lat), Double.parseDouble(lng));	
+		this.latLng = new LatLng(Double.parseDouble(lat), Double.parseDouble(lng));
+        this.lat = Double.parseDouble(lat);
+        this.lng = Double.parseDouble(lng);
+
 	}
+
 	public long getExpiration() {
 		return this.expireIn*1000*60 + timeStamp;
 	}
 
+    public double getLat() {
+        return lat;
+    }
+
+    public double getLng() {
+        return lng;
+    }
 }

@@ -1,4 +1,4 @@
-package com.iraasta.lanceit;
+package com.iraasta.lanceit.Controller;
 
 import de.timroes.swipetodismiss.SwipeDismissList;
 import de.timroes.swipetodismiss.SwipeDismissList.OnSwipe;
@@ -32,14 +32,12 @@ public class EnhancedSwipeRefreshLayout extends SwipeRefreshLayout {
 			@Override
 			public void swipeEnd() {
 				disableSwipeToRefresh = false;
-				
 			}
 		});
     }
 
     @Override
     public boolean canChildScrollUp(){
-
         // If we return TRUE from here, swipe to refresh is disabled.
         // If it's not disabled, we fall back to whatever super has to say.
         return disableSwipeToRefresh || super.canChildScrollUp();

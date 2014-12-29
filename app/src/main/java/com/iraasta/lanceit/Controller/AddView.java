@@ -1,8 +1,11 @@
-package com.iraasta.lanceit;
+package com.iraasta.lanceit.Controller;
 
 import java.util.Calendar;
 
-import com.iraasta.lanceit.FeedManager.OnDone;
+import com.iraasta.lanceit.Utilities.Managers.FeedManager;
+import com.iraasta.lanceit.Utilities.Managers.FeedManager.OnDone;
+import com.iraasta.lanceit.MainActivity;
+import com.iraasta.lanceit.R;
 
 import info.androidhive.listviewfeed.data.FeedItem;
 import android.view.View;
@@ -11,14 +14,12 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 import android.widget.Toast;
 
 public class AddView {
 
 	String[] categories = {
 			"Kupno/Zakupy"
-			
 	};
 	
 	Button confrimButton;
@@ -52,14 +53,14 @@ public class AddView {
 				fi.setExpiration(expireIn);
 				fi.setTimeStamp(Calendar.getInstance().getTimeInMillis());
 				FeedManager.sendFeed(fi, new OnDone() {
-					
-					@Override
-					public void done() {
-						Toast.makeText(MainActivity.instance, "Finished", Toast.LENGTH_SHORT).show();
-						FeedManager.getFeed(MainActivity.mainView.onFeedDone);
-						MainActivity.instance.mViewPager.setCurrentItem(1,true);
-					}
-				});
+
+                    @Override
+                    public void done() {
+                        Toast.makeText(MainActivity.instance, "Finished", Toast.LENGTH_SHORT).show();
+                        FeedManager.getFeed(MainActivity.mainView.onFeedDone);
+                        MainActivity.instance.mViewPager.setCurrentItem(1, true);
+                    }
+                });
 			}
 		});
 	}

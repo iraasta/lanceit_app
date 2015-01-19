@@ -24,10 +24,13 @@ import android.widget.AbsListView.OnScrollListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import com.crashlytics.android.Crashlytics;
+import com.mopub.common.MoPub;
 import info.androidhive.listviewfeed.adapter.FeedListAdapter;
 import info.androidhive.listviewfeed.app.AppController;
 import info.androidhive.listviewfeed.data.FeedItem;
 
+import io.fabric.sdk.android.Fabric;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
@@ -61,9 +64,14 @@ import de.timroes.swipetodismiss.SwipeDismissList;
 import de.timroes.swipetodismiss.SwipeDismissList.UndoMode;
 import de.timroes.swipetodismiss.SwipeDismissList.Undoable;
 import info.androidhive.listviewfeed.volley.LruBitmapCache;
+import com.mopub.mobileads.MoPubView;
 
 public class MainActivity extends ActionBarActivity implements
 ActionBar.TabListener  {
+
+    // TODO: Replace this test id with your personal ad unit id
+    private static final String MOPUB_BANNER_AD_UNIT_ID = "b5297eb168aa4c539a059939a82d837e";
+    private MoPubView moPubView;
 
     public static final String TAG = AppController.class.getSimpleName();
 
@@ -79,11 +87,21 @@ ActionBar.TabListener  {
 	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+
+
+
         mInstance = this;
 		super.onCreate(savedInstanceState);
+
 		setContentView(R.layout.activity_main);
 
 		instance = this;
+
+        moPubView = (MoPubView) findViewById(R.id.mopub_sample_ad);
+        moPubView.setAdUnitId(MOPUB_BANNER_AD_UNIT_ID);
+        moPubView.loadAd();
+
+        Fabric.with(this, new Crashlytics(), new MoPub());
 
 		// Set up the action bar.
 		final ActionBar actionBar = getSupportActionBar();
@@ -123,6 +141,13 @@ ActionBar.TabListener  {
 		}
 		mViewPager.setCurrentItem(1, false);
 	}
+
+    @Override
+    protected void onDestroy() {
+        moPubView.destroy();
+        super.onDestroy();
+    }
+
     public static synchronized MainActivity getInstance() {
         return mInstance;
     }

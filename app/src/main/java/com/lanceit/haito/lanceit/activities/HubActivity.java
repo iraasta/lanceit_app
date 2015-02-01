@@ -1,19 +1,16 @@
 package com.lanceit.haito.lanceit.activities;
 
-import java.util.Locale;
-
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.location.LocationManager;
 import android.net.Uri;
-import android.support.v4.view.PagerTitleStrip;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.os.Bundle;
+import android.support.v4.view.PagerTitleStrip;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -24,12 +21,13 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 import com.lanceit.haito.lanceit.R;
 import com.lanceit.haito.lanceit.model.User;
-import com.lanceit.haito.lanceit.refference.DataStorage;
 import com.lanceit.haito.lanceit.utils.GeoLocationManager;
 import com.lanceit.haito.lanceit.view.hubFragments.AddFragment;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.Locale;
 
 public class HubActivity extends ActionBarActivity implements AddFragment.OnFragmentInteractionListener {
 

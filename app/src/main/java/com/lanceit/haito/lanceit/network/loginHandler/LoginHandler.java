@@ -13,8 +13,6 @@ import com.lanceit.haito.lanceit.refference.Connections;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.Arrays;
-
 
 public class LoginHandler extends ModelJSONHandler {
 

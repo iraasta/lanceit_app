@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.iraasta.lanceit" >
+    package="com.lanceit.haito.lanceit" >
 
-    <uses-sdk android:minSdkVersion="7"
-        android:targetSdkVersion="16"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/Theme.AppCompat.Light.DarkActionBar" >
+        android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name=".loginActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,23 +26,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <meta-data
-            android:name="com.crashlytics.ApiKey"
-            android:value="1d381e3ec0ee38934c5cc924d389503437293d83" />
         <activity
-            android:name="com.mopub.mobileads.MoPubActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize" />
+            android:name=".activities.RegisterActivity"
+            android:label="@string/title_activity_register"
+            android:parentActivityName=".loginActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.lanceit.haito.lanceit.loginActivity" />
+        </activity>
         <activity
-            android:name="com.mopub.mobileads.MraidActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize" />
-        <activity
-            android:name="com.mopub.common.MoPubBrowser"
-            android:configChanges="keyboardHidden|orientation|screenSize" />
-        <activity
-            android:name="com.mopub.mobileads.MraidVideoPlayerActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize" />
+            android:name=".activities.HubActivity"
+            android:label="@string/title_activity_hub" >
+        </activity>
     </application>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
 </manifest>

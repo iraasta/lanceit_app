@@ -1,10 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name"> LanceIt </string>
-    <string name="action_settings">Settings</string>
+    <string name="app_name">LanceIt</string>
+    <string name="login_login">Login</string>
+    <string name="login_register">Register</string>
+    <string name="login_name">Nickname</string>
+    <string name="login_password">Password</string>
+
+    <string name="title_activity_register">Register</string>
+    <string name="register_username">Username</string>
+    <string name="register_password">Password</string>
+    <string name="register_Age">Age</string>
+    <string name="register_email">E-Mail</string>
+    <string name="register_first">First Name</string>
+    <string name="register_last">Last Name</string>
+    <string name="register_submit">Submit</string>
+
+    <string name="validation_error_username_shor">Podana nazwa użytkownika jest za krótka.</string>
+    <string name="validation_password_security"> Twoje hasło nie spełnia wymogów bezpieczeństwa. </string>
+    <string name="validation_error_age_null"> Nie wpisałeś rzadnej liczby..</string>
+    <string name="validation_error_age_young">Aby korzystać z serwisu musisz mieć co najmniej 16 lat.</string>
+    <string name="validation_error_age_old"> Wiek jest niepoprawny.</string>
+    <string name="validation_error_first"> Imię jest niepoprawne.</string>
+    <string name="validation_error_last"> Nazwisko jest niepoprawne.</string>
+    <string name="validation_error_email_notvalid">Adres Email nie jest poprawny.</string>
+
+    <string name="title_activity_hub"> Zlecenia </string>
+    <string name="title_section_add">Dodaj zlecenie</string>
+    <string name="title_section_listAll">Przeglądaj</string>
+    <string name="title_section_myList">Twoje zlecenia</string>
+
     <string name="hello_world">Hello world!</string>
-    <string name="title_section1">Add</string>
-    <string name="title_section2">Main</string>
-    <string name="title_section3">Map</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="add_lance_submit">Confirm</string>
+    <string name="add_lance_expire">Expire in (minutes)</string>
+    <string name="add_lance_desc">Description</string>
+    <string name="add_lance_title">Title</string>
+    <string name="add_lance_price">Price (PLN)</string>
+
 </resources>

@@ -16,6 +16,9 @@ import com.lanceit.haito.lanceit.activities.RegisterActivity;
 import com.lanceit.haito.lanceit.network.loginHandler.LoginHandler;
 import com.lanceit.haito.lanceit.refference.DataStorage;
 
+import java.net.CookieHandler;
+import java.net.CookieManager;
+
 
 public class loginActivity extends Activity {
 
@@ -27,10 +30,15 @@ public class loginActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+// Optionally, you can just use the default CookieManager
+        CookieManager manager = new CookieManager();
+        CookieHandler.setDefault(manager);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        requestQueue = new Volley().newRequestQueue(this);
+        requestQueue = new Volley().newRequestQueue(loginActivity.this);
 
         storage = getSharedPreferences(DataStorage.LOGIN_DATA,0);
         String logged = storage.getString(DataStorage.RECORD_LOGIN, "");
@@ -58,7 +66,7 @@ public class loginActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(loginActivity.this,RegisterActivity.class);
-                startActivity(myIntent);
+                startActivity(myIntent);;
             }
         });
     }

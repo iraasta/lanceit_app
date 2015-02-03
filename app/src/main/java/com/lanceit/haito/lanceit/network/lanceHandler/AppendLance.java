@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.Log;
 
 import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.lanceit.haito.lanceit.activities.HubActivity;
 import com.lanceit.haito.lanceit.network.loginHandler.ModelJSONFragmentHandler;
 import com.lanceit.haito.lanceit.refference.Connections;
@@ -22,12 +23,27 @@ public class AppendLance extends ModelJSONFragmentHandler {
 
     @Override
     public Response.Listener<JSONObject> setOnSuccess() {
-        return null;
+        return new Response.Listener<JSONObject>(){
+
+            @Override
+            public void onResponse(JSONObject response) {
+                Log.d("Success"," Tego się nie spodziewałem...");
+            }
+        };
     }
 
     @Override
     public Response.ErrorListener setErrorListener() {
-        return null;
+        return new Response.ErrorListener(){
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("Error"," To jest coś co mogę zrozumieć");
+                if(error != null){
+                    Log.d("Error",error.toString());
+                }
+            }
+        };
     }
 
     @Override

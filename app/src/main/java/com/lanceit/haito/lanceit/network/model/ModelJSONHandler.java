@@ -1,4 +1,4 @@
-package com.lanceit.haito.lanceit.network;
+package com.lanceit.haito.lanceit.network.model;
 
 import android.content.Context;
 import android.util.Log;
@@ -58,5 +58,13 @@ public abstract class ModelJSONHandler {
 
     public void setMethod(int method) {
         this.method = method;
+    }
+
+    public RequestQueue getRefRequestQueue() {
+        return refRequestQueue;
+    }
+
+    public String getUrl() {
+        return url;
     }
 }

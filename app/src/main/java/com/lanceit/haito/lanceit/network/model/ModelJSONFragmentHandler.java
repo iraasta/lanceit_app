@@ -1,10 +1,9 @@
-package com.lanceit.haito.lanceit.network.loginHandler;
+package com.lanceit.haito.lanceit.network.model;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
 
 import com.android.volley.RequestQueue;
-import com.lanceit.haito.lanceit.network.ModelJSONHandler;
 
 
 public abstract class ModelJSONFragmentHandler extends ModelJSONHandler {

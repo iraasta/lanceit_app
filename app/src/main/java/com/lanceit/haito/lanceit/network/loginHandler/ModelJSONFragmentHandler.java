@@ -18,7 +18,8 @@ public abstract class ModelJSONFragmentHandler extends ModelJSONHandler {
         return fragment;
     }
 
-    public void setFragment(Fragment fragment) {
+    public ModelJSONFragmentHandler setFragment(Fragment fragment) {
         this.fragment = fragment;
+        return this;
     }
 }

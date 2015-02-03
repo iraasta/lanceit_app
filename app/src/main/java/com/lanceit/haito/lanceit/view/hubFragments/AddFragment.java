@@ -16,6 +16,7 @@ import android.widget.Spinner;
 import com.lanceit.haito.lanceit.R;
 import com.lanceit.haito.lanceit.activities.HubActivity;
 import com.lanceit.haito.lanceit.network.lanceHandler.AppendLance;
+import com.lanceit.haito.lanceit.utils.NewLanceDataValidator;
 
 public class AddFragment extends Fragment {
 
@@ -74,9 +75,11 @@ public class AddFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Log.d("Activity Checker", parentActivity.toString());
-                AppendLance appendLance = new AppendLance(parentActivity);
-                appendLance.setFragment(AddFragment.this);
-                appendLance.sendRequest();
+                if(new NewLanceDataValidator(AddFragment.this).isDataValid()) {
+                    new AppendLance(parentActivity)
+                            .setFragment(AddFragment.this)
+                            .sendRequest();
+                }
             }
         });
 

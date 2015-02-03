@@ -23,7 +23,11 @@
     <string name="validation_error_age_old"> Wiek jest niepoprawny.</string>
     <string name="validation_error_first"> Imię jest niepoprawne.</string>
     <string name="validation_error_last"> Nazwisko jest niepoprawne.</string>
-    <string name="validation_error_email_notvalid">Adres Email nie jest poprawny.</string>
+    <string name="validation_error_email_notvalid"> Adres Email nie jest poprawny.</string>
+
+    <string name="validation_error_title"> Tytuł jest za krótki. </string>
+    <string name="validation_error_expiration"> Musisz podać ile zlecenia ma być ważne. </string>
+    <string name="validation_error_price"> Musisz podać wartość zlecenia. </string>
 
     <string name="title_activity_hub"> Zlecenia </string>
     <string name="title_section_add">Dodaj zlecenie</string>

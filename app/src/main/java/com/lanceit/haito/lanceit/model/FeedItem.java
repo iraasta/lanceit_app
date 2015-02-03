@@ -2,26 +2,39 @@ package com.lanceit.haito.lanceit.model;
 
 public class FeedItem {
 
+    private String id;
     private String titile;
     private String description;
-    private int dissapearAfter;
+
+    private Long createdAt;
+    private Long expireAt;
 
     private double lat;
     private double lng;
 
-    private int price;
+    private int cost;
+    private int category;
 
-    public FeedItem(String id, String titile, String description, int dissapearAfter, double lat, double lng, int price) {
+    public FeedItem(String id, String titile, String description, String createdAt, String expireAt, double lat, double lng, int price, int category) {
+
         this.id = id;
         this.titile = titile;
         this.description = description;
-        this.dissapearAfter = dissapearAfter;
+
+        this.createdAt = wendeStuffToLong(createdAt);
+        this.expireAt = wendeStuffToLong(expireAt);
+
         this.lat = lat;
         this.lng = lng;
-        this.price = price;
+
+        this.cost = price;
+        this.category = category;
     }
 
-    private String id;
+    private Long wendeStuffToLong(String timestamp){
+        String[] splitted = timestamp.split(":");
+        return Long.valueOf(splitted[0].replace("}",""));
+    }
 
     public String getId() {
         return id;
@@ -35,8 +48,12 @@ public class FeedItem {
         return description;
     }
 
-    public int getDissapearAfter() {
-        return dissapearAfter;
+    public Long getCreatedAt() {
+        return createdAt;
+    }
+
+    public Long getExpireAt() {
+        return expireAt;
     }
 
     public double getLat() {
@@ -47,7 +64,11 @@ public class FeedItem {
         return lng;
     }
 
-    public int getPrice() {
-        return price;
+    public int getCost() {
+        return cost;
+    }
+
+    public int getCategory() {
+        return category;
     }
 }

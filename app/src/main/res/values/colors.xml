@@ -19,7 +19,7 @@
     <item>#59a2be</item>
     <item>#2093cd</item>
     <item>#ad62a7</item>
-
+</array>
     <color name="main_color_gray_lt">#ffa1a1a1</color>
     <color name="light_black">#ff7a7070</color>
     <color name="red">#ffff0000</color>
@@ -41,5 +41,4 @@
     <color name="p_color">#ff575e6e</color>
     <color name="coupon_color">#ff575e6e</color>
     <color name="daily_deal_trans_bg">#ff263342</color>
-</array>
 </resources>

@@ -1,9 +1,5 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-    </style>
     <style name="AppBaseTheme" parent="@*android:style/Widget.WebTextView" />
     <style name="AppTheme" parent="@*android:style/WindowTitleBackground" />
     <style name="editext_normal" parent="@*android:style/Widget.EditText">

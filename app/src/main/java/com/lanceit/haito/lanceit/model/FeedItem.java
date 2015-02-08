@@ -1,13 +1,15 @@
 package com.lanceit.haito.lanceit.model;
 
+import java.sql.Timestamp;
+
 public class FeedItem {
 
     private String id;
     private String titile;
     private String description;
 
-    private Long createdAt;
-    private Long expireAt;
+    private Timestamp createdAt;
+    private Timestamp expireAt;
 
     private double lat;
     private double lng;
@@ -21,8 +23,8 @@ public class FeedItem {
         this.titile = titile;
         this.description = description;
 
-        this.createdAt = wendeStuffToLong(createdAt);
-        this.expireAt = wendeStuffToLong(expireAt);
+        this.createdAt = new Timestamp(wendeStuffToLong(createdAt));
+        this.expireAt = new Timestamp(wendeStuffToLong(expireAt));
 
         this.lat = lat;
         this.lng = lng;
@@ -48,11 +50,11 @@ public class FeedItem {
         return description;
     }
 
-    public Long getCreatedAt() {
+    public Timestamp getCreatedAt() {
         return createdAt;
     }
 
-    public Long getExpireAt() {
+    public Timestamp getExpireAt() {
         return expireAt;
     }
 

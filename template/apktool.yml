@@ -1,0 +1,13 @@
+version: 1.5.2
+apkFileName: dailydealsapk
+isFrameworkApk: false
+usesFramework:
+  ids:
+  - 1
+sdkInfo:
+  minSdkVersion: '14'
+  targetSdkVersion: '21'
+packageInfo:
+  cur_package: com.dailydeals
+  orig_package: com.dailydeals
+compressionType: false

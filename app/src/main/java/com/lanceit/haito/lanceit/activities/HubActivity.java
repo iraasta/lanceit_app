@@ -23,13 +23,14 @@ import com.lanceit.haito.lanceit.R;
 import com.lanceit.haito.lanceit.model.User;
 import com.lanceit.haito.lanceit.utils.GeoLocationManager;
 import com.lanceit.haito.lanceit.view.hubFragments.AddFragment;
+import com.lanceit.haito.lanceit.view.hubFragments.ListAllFragment;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Locale;
 
-public class HubActivity extends ActionBarActivity implements AddFragment.OnFragmentInteractionListener {
+public class HubActivity extends ActionBarActivity implements AddFragment.OnFragmentInteractionListener, ListAllFragment.OnFragmentInteractionListener {
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private User loggedUser;
@@ -96,11 +97,6 @@ public class HubActivity extends ActionBarActivity implements AddFragment.OnFrag
 
     }
 
-
-    /**
-     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
-     * one of the sections/tabs/pages.
-     */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         public SectionsPagerAdapter(FragmentManager fm) {
@@ -112,8 +108,11 @@ public class HubActivity extends ActionBarActivity implements AddFragment.OnFrag
             if(position==0){
                 AddFragment addFragment = AddFragment.newInstance("Param1","Param2");
                 addFragment.setParentActivity(HubActivity.this);
-                Log.d("Fragment Refference",addFragment.toString() + " ");
                 return addFragment;
+            } else if(position==1){
+                ListAllFragment listFragment = ListAllFragment.newInstance("Param1", "Param2");
+                listFragment.setParentActivity(HubActivity.this);
+                return listFragment;
             }
             return PlaceholderFragment.newInstance(position + 1);
         }

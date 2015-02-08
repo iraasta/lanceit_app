@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/main" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:textColor="@color/white" android:id="@id/btn_signout" android:background="@color/profile_signout_bg" android:layout_width="fill_parent" android:layout_height="@dimen/pad_50dp" android:text="@string/signout_profile" android:layout_alignParentBottom="true" />
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/btn_signout">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:gravity="bottom|center" android:orientation="vertical" android:background="@drawable/profile_pic" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="vertical" android:paddingRight="@dimen/pad_20dp" android:paddingBottom="@dimen/pad_20dp" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/txt_25sp" android:textColor="@color/white" android:id="@id/tv_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/john" />
+                    <TextView android:textSize="@dimen/txt_14sp" android:textColor="@color/white" android:id="@id/tv_email" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/example" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="horizontal" android:padding="@dimen/pad_20dp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <LinearLayout android:orientation="vertical" android:paddingRight="@dimen/pad_15dp" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="@dimen/txt_16sp" android:textColor="@color/black" android:paddingBottom="@dimen/pad_30dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/firstname" />
+                        <TextView android:textSize="@dimen/txt_16sp" android:textColor="@color/black" android:paddingBottom="@dimen/pad_30dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/lastname" />
+                        <TextView android:textSize="@dimen/txt_16sp" android:textColor="@color/black" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/email_profile" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="3.0">
+                        <EditText android:textSize="@dimen/txt_16sp" android:textColor="@color/black" android:background="@null" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/john1" android:singleLine="true" />
+                        <View android:background="@color/my_purchase_list_sap" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+                        <View android:layout_width="fill_parent" android:layout_height="@dimen/pad_30dp" />
+                        <EditText android:textSize="@dimen/txt_16sp" android:textColor="@color/black" android:background="@null" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/john2" android:singleLine="true" />
+                        <View android:background="@color/my_purchase_list_sap" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+                        <View android:layout_width="fill_parent" android:layout_height="@dimen/pad_30dp" />
+                        <EditText android:textSize="@dimen/txt_16sp" android:textColor="@color/black" android:background="@null" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/john1" android:singleLine="true" />
+                        <View android:background="@color/my_purchase_list_sap" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:paddingLeft="@dimen/pad_20dp" android:paddingBottom="@dimen/pad_20dp" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <LinearLayout android:orientation="vertical" android:paddingRight="@dimen/pad_10dp" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="@dimen/txt_16sp" android:textColor="@color/black" android:paddingBottom="@dimen/pad_30dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/notification" />
+                        <TextView android:textSize="@dimen/txt_16sp" android:textColor="@color/black" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/passcode" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="@dimen/pad_10dp">
+                        <CheckBox android:layout_gravity="right" android:id="@id/chk1" android:paddingRight="@dimen/pad_10dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/selector_check" />
+                        <View android:layout_width="fill_parent" android:layout_height="@dimen/pad_30dp" />
+                        <CheckBox android:layout_gravity="right" android:id="@id/chk2" android:paddingRight="@dimen/pad_10dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/selector_check" />
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView android:textSize="@dimen/txt_16sp" android:textColor="@color/black" android:paddingLeft="@dimen/pad_20dp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/aboutdailydeal" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -8,7 +8,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 
 
-public abstract class ModelCleanStringHandler extends ModelJSONHandler {
+public abstract class ModelCleanStringHandler extends ModelJSONFragmentHandler {
     public ModelCleanStringHandler(Context context, RequestQueue refRequestQueue) {
         super(context, refRequestQueue);
     }

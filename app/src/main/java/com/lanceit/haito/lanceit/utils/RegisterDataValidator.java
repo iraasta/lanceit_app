@@ -22,12 +22,18 @@ public class RegisterDataValidator {
         return (validateUsername(activityRef.getUsername().getText().toString())
                 && validatePassword(activityRef.getPassword().getText().toString())
                 && validateEmail(activityRef.getEmail().getText().toString())
+                && validatePhoneNumber(activityRef.getPhoneNumber().getText().toString())
                 && validateFirstName(activityRef.getFirstName().getText().toString())
                 && validateLastName(activityRef.getLastName().getText().toString())
-                && validateAge(activityRef.getAge().getText().toString())
             );
        }
-
+    private boolean validatePhoneNumber(final String string){
+        if(string.length() > 0){
+            MyToast.showShort(activityRef, "Wpisany numer jest niepoprawny...");
+            return false;
+        }
+        return true;
+    }
     private boolean validateUsername(final String string) {
         if (string.length() < 3) {
             MyToast.showShort(activityRef, R.string.validation_error_username_shor);
@@ -45,23 +51,6 @@ public class RegisterDataValidator {
             MyToast.showShort(activityRef,R.string.validation_password_security);
             return false;
         }
-    }
-
-    private boolean validateAge(final String string) {
-        if (string.length() == 0) {
-            MyToast.showShort(activityRef, R.string.validation_error_age_null);
-            return false;
-        }
-
-        int age = Integer.parseInt(string);
-        if (age < 16) {
-            MyToast.showShort(activityRef, R.string.validation_error_age_young);
-            return false;
-        } else if (age > 100) {
-            MyToast.showShort(activityRef, R.string.validation_error_age_old);
-            return false;
-        }
-        return true;
     }
 
     private boolean validateFirstName(final String name) {

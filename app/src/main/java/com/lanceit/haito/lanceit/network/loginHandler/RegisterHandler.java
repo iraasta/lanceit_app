@@ -60,7 +60,6 @@ public class RegisterHandler extends ModelJSONHandler {
 
         try {
             jsonObject.put("username",ref.getUsername().getText());
-            jsonObject.put("age",Integer.valueOf(ref.getAge().getText().toString()));
             jsonObject.put("phoneNumber", Long.valueOf(holder.getLine1Number()));
             jsonObject.put("firstName",ref.getFirstName().getText());
             jsonObject.put("lastName",ref.getLastName().getText());

@@ -1,7 +1,9 @@
 package com.lanceit.haito.lanceit.activities;
 
-import android.support.v7.app.ActionBarActivity;
+import android.content.Context;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.telephony.TelephonyManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,8 +25,8 @@ public class RegisterActivity extends ActionBarActivity {
     private EditText password;
     private EditText firstName;
     private EditText lastName;
-    private EditText age;
     private EditText email;
+    private EditText phoneNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +37,8 @@ public class RegisterActivity extends ActionBarActivity {
         password = (EditText) findViewById(R.id.register_password);
         firstName = (EditText) findViewById(R.id.register_first);
         lastName = (EditText) findViewById(R.id.register_last);
-        age = (EditText) findViewById(R.id.register_age);
         email = (EditText) findViewById(R.id.register_email);
+        phoneNumber = (EditText) findViewById(R.id.phone_number);
 
         ((Button) findViewById(R.id.register_submit)).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +48,7 @@ public class RegisterActivity extends ActionBarActivity {
                 }
             }
         });
+        phoneNumber.setText(((TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE)).getLine1Number());
 
         requestQueue = new Volley().newRequestQueue(this);
     }
@@ -87,12 +90,11 @@ public class RegisterActivity extends ActionBarActivity {
         return lastName;
     }
 
-    public EditText getAge() {
-        return age;
-    }
-
     public EditText getEmail() {
         return email;
     }
 
+    public EditText getPhoneNumber() {
+        return phoneNumber;
+    }
 }

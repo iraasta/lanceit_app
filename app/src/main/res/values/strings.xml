@@ -10,7 +10,6 @@
     <string name="title_activity_register">Register</string>
     <string name="register_username">Username</string>
     <string name="register_password">Password</string>
-    <string name="register_Age">Age</string>
     <string name="register_email">E-Mail</string>
     <string name="register_first">First Name</string>
     <string name="register_last">Last Name</string>
@@ -18,9 +17,6 @@
 
     <string name="validation_error_username_shor">Podana nazwa użytkownika jest za krótka.</string>
     <string name="validation_password_security"> Twoje hasło nie spełnia wymogów bezpieczeństwa. </string>
-    <string name="validation_error_age_null"> Nie wpisałeś rzadnej liczby..</string>
-    <string name="validation_error_age_young">Aby korzystać z serwisu musisz mieć co najmniej 16 lat.</string>
-    <string name="validation_error_age_old"> Wiek jest niepoprawny.</string>
     <string name="validation_error_first"> Imię jest niepoprawne.</string>
     <string name="validation_error_last"> Nazwisko jest niepoprawne.</string>
     <string name="validation_error_email_notvalid"> Adres Email nie jest poprawny.</string>
@@ -97,5 +93,6 @@ Enjoy Australian natural native animals in their natural habitat,spectecular sce
     <string name="timeleft">Time left</string>
     <string name="timeleft2">36:16:12</string>
     <string name="search">Search</string>
+    <string name="phone_number">Phone Number</string>
 
 </resources>

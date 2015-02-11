@@ -14,7 +14,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 import com.lanceit.haito.lanceit.R;
 import com.lanceit.haito.lanceit.network.loginHandler.RegisterHandler;
-import com.lanceit.haito.lanceit.utils.RegisterDataValidator;
+import com.lanceit.haito.lanceit.utils.validation.RegisterDataValidator;
 
 
 public class RegisterActivity extends ActionBarActivity {

@@ -16,7 +16,7 @@ import android.widget.Spinner;
 import com.lanceit.haito.lanceit.R;
 import com.lanceit.haito.lanceit.activities.HubActivity;
 import com.lanceit.haito.lanceit.network.lanceHandler.AppendLance;
-import com.lanceit.haito.lanceit.utils.NewLanceDataValidator;
+import com.lanceit.haito.lanceit.utils.validation.NewLanceDataValidator;
 
 public class AddFragment extends Fragment {
 

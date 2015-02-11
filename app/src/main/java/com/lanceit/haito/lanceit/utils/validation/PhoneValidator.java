@@ -1,4 +1,4 @@
-package com.lanceit.haito.lanceit.utils;
+package com.lanceit.haito.lanceit.utils.validation;
 
 import android.telephony.TelephonyManager;
 

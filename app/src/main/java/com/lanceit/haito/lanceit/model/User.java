@@ -12,9 +12,8 @@ public class User {
     private String lastName;
     private String email;
 
-    public User(String username, int age, long phoneNumber, String firstName, String lastName, String email) {
+    public User(String username,  long phoneNumber, String firstName, String lastName, String email) {
         this.username = username;
-        this.age = age;
         this.phoneNumber = phoneNumber;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -25,7 +24,6 @@ public class User {
         try {
             return new User(
                     userInJSON.getString("username"),
-                    userInJSON.getInt("age"),
                     userInJSON.getLong("phoneNumber"),
                     userInJSON.getString("firstName"),
                     userInJSON.getString("lastName"),
@@ -43,14 +41,6 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 
     public long getPhoneNumber() {

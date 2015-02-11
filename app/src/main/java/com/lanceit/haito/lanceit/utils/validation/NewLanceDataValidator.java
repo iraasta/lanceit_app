@@ -1,6 +1,8 @@
-package com.lanceit.haito.lanceit.utils;
+package com.lanceit.haito.lanceit.utils.validation;
 
 import com.lanceit.haito.lanceit.R;
+import com.lanceit.haito.lanceit.utils.CommonUtilities;
+import com.lanceit.haito.lanceit.utils.MyToast;
 import com.lanceit.haito.lanceit.view.hubFragments.AddFragment;
 
 public class NewLanceDataValidator {
@@ -18,7 +20,7 @@ public class NewLanceDataValidator {
         if(fragmentRefference.getTitleText().getText().toString().length() > 3){
             return true;
         } else {
-            MyToast.showShort(fragmentRefference.getParentActivity(),R.string.validation_error_title);
+            MyToast.showShort(fragmentRefference.getParentActivity(), R.string.validation_error_title);
             return false;
         }
     }

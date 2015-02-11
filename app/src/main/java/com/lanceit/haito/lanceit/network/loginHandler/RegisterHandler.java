@@ -11,6 +11,7 @@ import com.lanceit.haito.lanceit.network.model.ModelJSONHandler;
 import com.lanceit.haito.lanceit.refference.Connections;
 import com.lanceit.haito.lanceit.utils.MyToast;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -60,11 +61,11 @@ public class RegisterHandler extends ModelJSONHandler {
 
         try {
             jsonObject.put("username",ref.getUsername().getText());
-            jsonObject.put("phoneNumber", Long.valueOf(holder.getLine1Number()));
             jsonObject.put("firstName",ref.getFirstName().getText());
             jsonObject.put("lastName",ref.getLastName().getText());
             jsonObject.put("email",ref.getEmail().getText());
             jsonObject.put("password",ref.getPassword().getText());
+            jsonObject.put("shareholders", new JSONArray());
         } catch (JSONException e) {
             e.printStackTrace();
         }

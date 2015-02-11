@@ -1,10 +1,11 @@
-package com.lanceit.haito.lanceit.utils;
+package com.lanceit.haito.lanceit.utils.validation;
 
 import android.content.Context;
 
 import com.lanceit.haito.lanceit.R;
 import com.lanceit.haito.lanceit.activities.RegisterActivity;
 import com.lanceit.haito.lanceit.refference.Validation;
+import com.lanceit.haito.lanceit.utils.MyToast;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -28,7 +29,7 @@ public class RegisterDataValidator {
             );
        }
     private boolean validatePhoneNumber(final String string){
-        if(string.length() > 0){
+        if(string.length() == 0){
             MyToast.showShort(activityRef, "Wpisany numer jest niepoprawny...");
             return false;
         }

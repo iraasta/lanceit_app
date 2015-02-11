@@ -44,6 +44,7 @@
     <string name="email_1">E-mail address</string>
     <string name="Password">........</string>
     <string name="signin">Sign in</string>
+    <string name="cancel">Cancel</string>
     <string name="forgotpass">Forget password?</string>
     <string name="Newhere">New here?</string>
     <string name="SignUp">Sign Up</string>

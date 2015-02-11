@@ -9,7 +9,7 @@ import android.telephony.TelephonyManager;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-public class NetworkUtilities {
+public class PhoneUtilities {
     public static void callSomeone(Activity activity,long number){
         Intent callIntent = new Intent(Intent.ACTION_CALL);
         callIntent.setData(Uri.parse("tel:"+number));

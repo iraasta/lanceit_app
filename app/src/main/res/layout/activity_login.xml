@@ -139,14 +139,13 @@ android:orientation="vertical">
                 android:textColor="@color/white"
                 android:textSize="@dimen/txt_18sp" />
         </LinearLayout>
+        <Button
+            android:id="@+id/bRegister"
+            android:text="@string/login_register"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/pad_50dp"
+            android:background="@drawable/bg_input"
+            android:textColor="@color/red_main" />
     </LinearLayout>
 </ScrollView>
-
-<Button
-    android:id="@+id/bRegister"
-    android:text="@string/login_register"
-    android:layout_width="fill_parent"
-    android:layout_height="@dimen/pad_50dp"
-    android:background="@drawable/bg_input"
-    android:textColor="@color/red_main" />
 </LinearLayout>

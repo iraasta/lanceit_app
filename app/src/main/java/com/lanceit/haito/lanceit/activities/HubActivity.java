@@ -22,6 +22,7 @@ import com.android.volley.toolbox.Volley;
 import com.lanceit.haito.lanceit.R;
 import com.lanceit.haito.lanceit.model.User;
 import com.lanceit.haito.lanceit.utils.GeoLocationManager;
+import com.lanceit.haito.lanceit.view.PageTransformer;
 import com.lanceit.haito.lanceit.view.hubFragments.AddFragment;
 import com.lanceit.haito.lanceit.view.hubFragments.ListAllFragment;
 
@@ -74,6 +75,7 @@ public class HubActivity extends ActionBarActivity implements AddFragment.OnFrag
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         myLocationManager = new GeoLocationManager();
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, myLocationManager);
+        mViewPager.setPageTransformer(true, new PageTransformer());
     }
 
 
@@ -167,6 +169,7 @@ public class HubActivity extends ActionBarActivity implements AddFragment.OnFrag
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_hub, container, false);
+
             return rootView;
         }
     }

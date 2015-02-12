@@ -1,21 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="@drawable/daily_deal_white_bg" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:id="@+id/mainImage" android:background="@drawable/daily_deal_pic1" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginLeft="1.0dip" android:layout_marginTop="@dimen/pad_1dp" android:layout_marginRight="@dimen/pad_2dp" android:layout_weight="3.0">
-        <LinearLayout android:layout_gravity="bottom" android:orientation="vertical" android:background="@color/daily_deal_trans_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:alpha="0.65">
-            <LinearLayout android:orientation="vertical" android:padding="@dimen/pad_10dp" android:layout_width="fill_parent" android:layout_height="wrap_content">
-                <TextView android:textSize="@dimen/txt_14sp" android:textColor="@color/white" android:id="@+id/txt1" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-                <TextView android:textSize="@dimen/txt_12sp" android:textColor="@color/red_main" android:id="@+id/txt2" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/daily_deal_white_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/mainImage"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_marginLeft="1.0dip"
+        android:layout_marginRight="@dimen/pad_2dp"
+        android:layout_marginTop="@dimen/pad_1dp"
+        android:layout_weight="3.0"
+        android:background="@drawable/daily_deal_pic1">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:alpha="0.65"
+            android:background="@color/daily_deal_trans_bg"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/pad_10dp">
+
+                <TextView
+                    android:id="@+id/item_title"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/txt_14sp" />
+
+                <TextView
+                    android:id="@+id/item_shortDesc"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/red_main"
+                    android:textSize="@dimen/txt_12sp" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-    <LinearLayout android:gravity="center" android:orientation="horizontal" android:padding="@dimen/pad_10dp" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
-        <TextView android:textColor="@color/black" android:id="@+id/tv1" android:paddingRight="@dimen/pad_5dp" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-        <TextView android:textColor="@color/red_main" android:gravity="center" android:id="@+id/tv2" android:background="@drawable/rate_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-        <View android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
-        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
-            <TextView android:textSize="@dimen/txt_14sp" android:textColor="@color/gray" android:id="@+id/tv3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/Bought" />
-            <TextView android:textSize="@dimen/txt_14sp" android:textColor="@color/black" android:gravity="center" android:id="@+id/tv4" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/pad_10dp">
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="@dimen/pad_5dp"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rate_bg"
+            android:gravity="center"
+            android:textColor="@color/red_main" />
+
+        <View
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Bought"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/txt_14sp" />
+
+            <TextView
+                android:id="@+id/tv4"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/txt_14sp" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

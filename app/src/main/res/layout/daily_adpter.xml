@@ -80,7 +80,6 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Bought"
@@ -88,12 +87,13 @@
                 android:textSize="@dimen/txt_14sp" />
 
             <TextView
-                android:id="@+id/tv4"
+                android:id="@+id/item_distance"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textColor="@color/black"
-                android:textSize="@dimen/txt_14sp" />
+                android:textSize="@dimen/txt_14sp"
+                android:text="100m" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

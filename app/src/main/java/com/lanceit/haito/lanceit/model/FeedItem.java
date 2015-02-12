@@ -73,4 +73,8 @@ public class FeedItem {
     public int getCategory() {
         return category;
     }
+
+    public String getDistance(){
+        return "100m";
+    }
 }

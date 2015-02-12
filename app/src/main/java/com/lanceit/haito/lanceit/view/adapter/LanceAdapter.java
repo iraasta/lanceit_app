@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.lanceit.haito.lanceit.R;
 import com.lanceit.haito.lanceit.model.FeedItem;
+import com.lanceit.haito.lanceit.utils.GeoLocationManager;
 
 import java.util.List;
 
@@ -18,6 +19,15 @@ public class LanceAdapter extends BaseAdapter {
     private Context context;
     private LayoutInflater inflater;
     private List list;
+
+    private GeoLocationManager glm;
+
+    public LanceAdapter(Context context, List list)
+    {
+        super();
+        this.context = context;
+        this.list = list;
+    }
 
     @Override
     public int getCount() {
@@ -42,20 +52,25 @@ public class LanceAdapter extends BaseAdapter {
         }
 
         LinearLayout linearlayout = (LinearLayout) view.findViewById(R.id.mainImage);
+
         TextView title = (TextView) view.findViewById(R.id.item_title);
-        TextView shortDesc = (TextView) view.findViewById(R.id.item_title);
+        TextView shortDesc = (TextView) view.findViewById(R.id.item_shortDesc);
+        TextView distance = (TextView) view.findViewById(R.id.item_distance);
 
         FeedItem feedItem = (FeedItem) list.get(position);
+
         linearlayout.setBackgroundResource(R.drawable.buy_tour_pic);
         title.setText(feedItem.getTitile());
         shortDesc.setText(
-                new StringBuilder(
-                        feedItem.getTitile()
-                                .substring(0, 15))
-                        .append("...")
-                        .toString()
+                feedItem.getDescription()
+                        .substring(0, 15) + "..."
         );
+        distance.setText(feedItem.getDistance());
 
         return view;
+    }
+
+    public void setGlm(GeoLocationManager glm) {
+        this.glm = glm;
     }
 }

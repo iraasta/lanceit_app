@@ -44,6 +44,8 @@ public class LoginHandler extends ModelJSONHandler {
                     if (error.networkResponse != null && error.networkResponse.statusCode == 400) {
                         Toast errorToast = Toast.makeText(getRefContext(), "Nie udało się zalogować.", Toast.LENGTH_SHORT);
                         errorToast.show();
+                    } else if(error.networkResponse != null && error.networkResponse.statusCode == 556){
+                        ((loginActivity)getRefContext()).showDialog();
                     }
                 }
                 ((loginActivity) getRefContext()).getTextPass().setText("");

@@ -24,6 +24,7 @@ import com.lanceit.haito.lanceit.model.User;
 import com.lanceit.haito.lanceit.utils.GeoLocationManager;
 import com.lanceit.haito.lanceit.view.PageTransformer;
 import com.lanceit.haito.lanceit.view.hubFragments.AddFragment;
+import com.lanceit.haito.lanceit.view.hubFragments.LanceListFragment;
 import com.lanceit.haito.lanceit.view.hubFragments.ListAllFragment;
 
 import org.json.JSONException;
@@ -112,7 +113,7 @@ public class HubActivity extends ActionBarActivity implements AddFragment.OnFrag
                 addFragment.setParentActivity(HubActivity.this);
                 return addFragment;
             } else if(position==1){
-                ListAllFragment listFragment = ListAllFragment.newInstance("Param1", "Param2");
+                LanceListFragment listFragment = new LanceListFragment();
                 listFragment.setParentActivity(HubActivity.this);
                 return listFragment;
             }

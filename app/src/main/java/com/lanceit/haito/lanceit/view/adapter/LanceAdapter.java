@@ -18,7 +18,7 @@ public class LanceAdapter extends BaseAdapter {
 
     private Context context;
     private LayoutInflater inflater;
-    private List list;
+    public List list;
 
     private GeoLocationManager glm;
 

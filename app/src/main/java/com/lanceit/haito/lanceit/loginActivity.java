@@ -51,12 +51,12 @@ public class loginActivity extends FragmentActivity
 
         Button loginButton = (Button) findViewById(R.id.bLogin);
         Button registerButton = (Button) findViewById(R.id.bRegister);
-
-        if(!logged.equals("")){
-            textLogin.setText(logged);
-            textPass.setText(storage.getString(DataStorage.RECORD_PASS,""));
-            tryLogin();
-        }
+        //TODO: Włączyć spowrotem autologowanie
+//        if(!logged.equals("")){
+//            textLogin.setText(logged);
+//            textPass.setText(storage.getString(DataStorage.RECORD_PASS,""));
+//            tryLogin();
+//        }
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override

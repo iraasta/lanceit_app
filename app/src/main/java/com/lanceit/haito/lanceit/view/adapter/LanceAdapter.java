@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.lanceit.haito.lanceit.R;
+import com.lanceit.haito.lanceit.activities.HubActivity;
 import com.lanceit.haito.lanceit.model.FeedItem;
 import com.lanceit.haito.lanceit.utils.GeoLocationManager;
 
@@ -27,6 +28,8 @@ public class LanceAdapter extends BaseAdapter {
         super();
         this.context = context;
         this.list = list;
+
+        this.glm = ((HubActivity)context).getMyLocationManager();
     }
 
     @Override
@@ -63,14 +66,10 @@ public class LanceAdapter extends BaseAdapter {
         title.setText(feedItem.getTitile());
         shortDesc.setText(
                 feedItem.getDescription()
-                        .substring(0, 15) + "..."
+                        .substring(0, feedItem.getDescription().length() > 30 ? 30 : feedItem.getDescription().length()) + "..."
         );
-        distance.setText(feedItem.getDistance());
+        distance.setText(glm.getDistanceFrom(feedItem.getLat(),feedItem.getLng()) + "m");
 
         return view;
-    }
-
-    public void setGlm(GeoLocationManager glm) {
-        this.glm = glm;
     }
 }

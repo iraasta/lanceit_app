@@ -26,6 +26,7 @@
     <string name="validation_error_price"> Musisz podać wartość zlecenia. </string>
 
     <string name="title_activity_hub"> Zlecenia </string>
+    <string name="title_activity_detais"> Detale </string>
     <string name="title_section_add">Dodaj zlecenie</string>
     <string name="title_section_listAll">Przeglądaj</string>
     <string name="title_section_myList">Twoje zlecenia</string>

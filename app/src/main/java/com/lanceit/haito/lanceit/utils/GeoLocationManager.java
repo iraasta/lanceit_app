@@ -42,7 +42,7 @@ public class GeoLocationManager implements LocationListener {
 
         double a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.sin(dLon / 2) * Math.sin(dLon / 2) * Math.cos(thisLat) * Math.cos(lat);
         double c = 2 * Math.asin(Math.sqrt(a));
-        return R * c;
+        return Math.round(R * c * 100)/100;
     }
 
     public double getLat() {

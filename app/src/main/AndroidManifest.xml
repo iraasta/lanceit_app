@@ -43,6 +43,10 @@
             android:name=".activities.HubActivity"
             android:label="@string/title_activity_hub" >
         </activity>
+        <activity
+            android:name=".activities.LanceActivity"
+            android:label="@string/title_activity_detais" >
+        </activity>
     </application>
 
 </manifest>

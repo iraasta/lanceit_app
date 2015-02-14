@@ -27,9 +27,12 @@ public class LoginHandler extends ModelJSONHandler {
         return new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                if(response != null){
-                    ((loginActivity) getRefContext()).loginSuccess(response.toString());
-                    Log.d("thing",response.toString());
+                if (response != null) {
+                    if (response.toString().contains("phoneNumber"))
+                        ((loginActivity) getRefContext()).loginSuccess(response.toString());
+                    else
+                        ((loginActivity) getRefContext()).showDialog();
+                    Log.d("containing", response.toString().contains("phoneNumber") + " contains phonenumber");
                 }
             }
         };
@@ -44,8 +47,6 @@ public class LoginHandler extends ModelJSONHandler {
                     if (error.networkResponse != null && error.networkResponse.statusCode == 400) {
                         Toast errorToast = Toast.makeText(getRefContext(), "Nie udało się zalogować.", Toast.LENGTH_SHORT);
                         errorToast.show();
-                    } else if(error.networkResponse != null && error.networkResponse.statusCode == 556){
-                        ((loginActivity)getRefContext()).showDialog();
                     }
                 }
                 ((loginActivity) getRefContext()).getTextPass().setText("");
@@ -65,7 +66,7 @@ public class LoginHandler extends ModelJSONHandler {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        Log.d("debug",requestData.toString());
+        Log.d("debug", requestData.toString());
         return requestData;
     }
 

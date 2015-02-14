@@ -3,10 +3,14 @@ package com.lanceit.haito.lanceit.activities.dialog;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
+import android.telephony.TelephonyManager;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.EditText;
 
 import com.lanceit.haito.lanceit.R;
 
@@ -33,6 +37,7 @@ public class PhoneActivationDialog extends DialogFragment {
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         // Verify that the host activity implements the callback interface
+
         try {
             // Instantiate the NoticeDialogListener so we can send events to the host
             mListener = (NoticeDialogListener) activity;
@@ -52,7 +57,11 @@ public class PhoneActivationDialog extends DialogFragment {
 
         // Inflate and set the layout for the dialog
         // Pass null as the parent view because its going in the dialog layout
-        builder.setView(inflater.inflate(R.layout.phone_activation, null));
+        View view = inflater.inflate(R.layout.phone_activation, null);
+        builder.setView(view);
+
+        TelephonyManager tMgr = (TelephonyManager)getActivity().getApplicationContext().getSystemService(Context.TELEPHONY_SERVICE);
+        ((EditText)view.findViewById(R.id.dialog_phon_numbe)).setText(tMgr.getLine1Number());
 
         builder.setMessage(R.string.activation_phone_number_prompt)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -67,6 +76,7 @@ public class PhoneActivationDialog extends DialogFragment {
                         mListener.onDialogNegativeClick(PhoneActivationDialog.this);
                     }
                 });
-        return builder.create();
+        AlertDialog dialog = builder.create();
+        return dialog;
     }
 }

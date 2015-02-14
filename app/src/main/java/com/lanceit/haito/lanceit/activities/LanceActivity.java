@@ -1,4 +1,4 @@
-package com.lanceit.haito.lanceit.view;
+package com.lanceit.haito.lanceit.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -7,23 +7,29 @@ import android.widget.TextView;
 
 import com.lanceit.haito.lanceit.R;
 
-public class LanceDetails extends Activity {
-    private static String title;
-    private TextView dollerPrice;
+public class LanceActivity extends Activity{
 
-    public LanceDetails()
+    private static String title;
+
+    private TextView dollerPrice;
+    private TextView titleTextView;
+
+    public LanceActivity()
     {
     }
-
 
     protected void onCreate(Bundle bundle)
     {
         super.onCreate(bundle);
         setContentView(R.layout.buy_screen_main);
         title = getIntent().getExtras().getString("title");
-        dollerPrice = (TextView)findViewById(R.id.doller_strike);
+
+        dollerPrice = (TextView)findViewById(R.id.detail_title);
+        dollerPrice.setText(title);
+
         dollerPrice.setPaintFlags(0x10 | dollerPrice.getPaintFlags());
-        getActionBar().setTitle(title);
+
+        //getActionBar().setTitle(title);
     }
 
     public boolean onOptionsItemSelected(MenuItem menuitem)

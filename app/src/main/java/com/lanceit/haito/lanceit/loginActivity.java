@@ -69,7 +69,7 @@ public class loginActivity extends FragmentActivity
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(loginActivity.this,RegisterActivity.class);
-                //startActivity(myIntent);;
+                startActivity(myIntent);
             }
         });
     }

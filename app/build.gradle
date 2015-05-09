@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 18
+    compileSdkVersion 21
     buildToolsVersion "21.1.2"
 
     defaultConfig {
         applicationId "com.lanceit.haito.lanceit"
-        minSdkVersion 18
+        minSdkVersion 21
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"

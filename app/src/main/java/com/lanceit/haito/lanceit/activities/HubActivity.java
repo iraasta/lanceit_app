@@ -116,6 +116,10 @@ public class HubActivity extends ActionBarActivity implements AddFragment.OnFrag
                 LanceListFragment listFragment = new LanceListFragment();
                 listFragment.setParentActivity(HubActivity.this);
                 return listFragment;
+            } else if(position==2){
+                ListAllFragment listFragment = new ListAllFragment();
+                listFragment.setParentActivity(HubActivity.this);
+                return listFragment;
             }
             return PlaceholderFragment.newInstance(position + 1);
         }

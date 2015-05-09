@@ -2,6 +2,7 @@ package com.lanceit.haito.lanceit.view.hubFragments;
 
 import android.app.Activity;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -60,9 +61,8 @@ public class ListAllFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_list_all, container, false);
         debug = (EditText) view.findViewById(R.id.debug_field);
         Log.d("Fragment ", debug.toString());
-        new ListAllLances(parentActivity)
-                .setFragment(ListAllFragment.this)
-                .sendRequest();
+
+
         return view;
     }
 

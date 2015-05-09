@@ -63,12 +63,13 @@ public class LanceAdapter extends BaseAdapter {
         FeedItem feedItem = (FeedItem) list.get(position);
 
         linearlayout.setBackgroundResource(R.drawable.buy_tour_pic);
-        title.setText(feedItem.getTitile());
+        title.setText(feedItem.getTitle());
         shortDesc.setText(
                 feedItem.getDescription()
                         .substring(0, feedItem.getDescription().length() > 30 ? 30 : feedItem.getDescription().length()) + "..."
         );
-        distance.setText(glm.getDistanceFrom(feedItem.getLat(),feedItem.getLng()) + "m");
+        //TODO:Naprawic to
+        //distance.setText(glm.getDistanceFrom(feedItem.getLat(),feedItem.getLng()) + "m");
 
         return view;
     }

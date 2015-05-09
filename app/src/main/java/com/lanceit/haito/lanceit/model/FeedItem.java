@@ -1,80 +1,57 @@
 package com.lanceit.haito.lanceit.model;
 
+/*t*/
+
 import java.sql.Timestamp;
+import java.util.ArrayList;
 
 public class FeedItem {
-
-    private String id;
-    private String titile;
+    private String username;
+    private String title;
     private String description;
 
-    private Timestamp createdAt;
-    private Timestamp expireAt;
+    private String id;
 
-    private double lat;
-    private double lng;
-
-    private int cost;
+    private int stage;
     private int category;
 
-    public FeedItem(String id, String titile, String description, String createdAt, String expireAt, double lat, double lng, int price, int category) {
+    private double cost;
 
-        this.id = id;
-        this.titile = titile;
+    private boolean completed;
+
+    private ArrayList<Attendant> attendants;
+
+    private Location loc;
+
+    private String createdAt;
+    private String expireAt;
+
+    public FeedItem(){}
+
+    public FeedItem(String username, String title, String description, String id, int stage, int category, double cost, boolean completed, ArrayList<Attendant> attendants, Location loc, String createdAt, String expireAt) {
+        this.username = username;
+        this.title = title;
         this.description = description;
-
-        this.createdAt = new Timestamp(wendeStuffToLong(createdAt));
-        this.expireAt = new Timestamp(wendeStuffToLong(expireAt));
-
-        this.lat = lat;
-        this.lng = lng;
-
-        this.cost = price;
+        this.id = id;
+        this.stage = stage;
         this.category = category;
+        this.cost = cost;
+        this.completed = completed;
+        this.attendants = attendants;
+        this.loc = loc;
+        this.createdAt = createdAt;
+        this.expireAt = expireAt;
     }
 
-    private Long wendeStuffToLong(String timestamp){
-        String[] splitted = timestamp.split(":");
-        return Long.valueOf(splitted[0].replace("}",""));
+    public String getUsername() {
+        return username;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public String getTitile() {
-        return titile;
+    public String getTitle() {
+        return title;
     }
 
     public String getDescription() {
         return description;
-    }
-
-    public Timestamp getCreatedAt() {
-        return createdAt;
-    }
-
-    public Timestamp getExpireAt() {
-        return expireAt;
-    }
-
-    public double getLat() {
-        return lat;
-    }
-
-    public double getLng() {
-        return lng;
-    }
-
-    public int getCost() {
-        return cost;
-    }
-
-    public int getCategory() {
-        return category;
-    }
-
-    public String getDistance(){
-        return "100m";
     }
 }

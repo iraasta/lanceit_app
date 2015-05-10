@@ -1,8 +1,5 @@
 package com.lanceit.haito.lanceit.model;
 
-/*t*/
-
-import java.sql.Timestamp;
 import java.util.ArrayList;
 
 public class FeedItem {
@@ -46,12 +43,22 @@ public class FeedItem {
     public String getUsername() {
         return username;
     }
-
     public String getTitle() {
         return title;
     }
-
     public String getDescription() {
         return description;
+    }
+
+    public Location getLoc() {
+        return loc;
+    }
+
+    public String getExpireAt() {
+        return expireAt;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
     }
 }

@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.google.gson.Gson;
 import com.lanceit.haito.lanceit.R;
 import com.lanceit.haito.lanceit.activities.HubActivity;
 import com.lanceit.haito.lanceit.activities.LanceActivity;
@@ -33,7 +34,7 @@ public class LanceListFragment extends Fragment {
     private void launchActivity(int i, List list1) {
         startActivity(
                 new Intent(getActivity().getApplicationContext(), LanceActivity.class)
-                        .putExtra("title", ((FeedItem) list1.get(i)).getTitle()));
+                        .putExtra("data", new Gson().toJson((FeedItem) list1.get(i))));
     }
 
     private void loadContent(View view) {

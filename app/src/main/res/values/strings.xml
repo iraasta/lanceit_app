@@ -98,5 +98,6 @@ Enjoy Australian natural native animals in their natural habitat,spectecular sce
     <string name="phone_number">Phone Number</string>
     <string name="phone_number_activation">Wpisz numer telefonu</string>
     <string name="activation_phone_number_prompt">Potwierdź swój numer telefonu</string>
+    <string name="login_logo_desc">Logo</string>
 
 </resources>

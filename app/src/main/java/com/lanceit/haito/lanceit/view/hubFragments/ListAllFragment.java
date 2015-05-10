@@ -60,8 +60,6 @@ public class ListAllFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_list_all, container, false);
         debug = (EditText) view.findViewById(R.id.debug_field);
-        Log.d("Fragment ", debug.toString());
-
 
         return view;
     }

@@ -19,7 +19,7 @@ public class SerializationHelper {
         for(int n = 0; n < array.length(); n++){
             try {
                 //TODO: Wpierdol wendemu niech zmapuje to porzadnie na serwie
-
+                //TODO: Zrobic to porzadnie, moze jakies generic funkcje?
                 JSONObject object = array.getJSONObject(n);
 
                 //Flattening id
@@ -49,6 +49,17 @@ public class SerializationHelper {
         return array;
     }
 
+    //TODO: Cos w ten desen?
+    public static <T> void flatten(JSONObject target, String select){
+        try {
+            T temp = (T) target.get(select);
+            target.remove(select);
+            target.put(select,temp);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
 
     public static ArrayList<FeedItem> parseFeed(String toParse){
         Type collectionType = new TypeToken<ArrayList<FeedItem>>(){}.getType();

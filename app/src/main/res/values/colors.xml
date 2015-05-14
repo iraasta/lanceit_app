@@ -11,7 +11,7 @@
     <color name="middle_bot">#2AEBA4</color>
     <color name="bot">#30F247</color>
     <color name="register_background">#7e7e7e</color>
-    -
+
     <array name="letter_tile_colors">
         <item>#f16364</item>
         <item>#f58559</item>
@@ -22,6 +22,14 @@
         <item>#2093cd</item>
         <item>#ad62a7</item>
     </array>
+
+    <color name="list_item_title">#fff</color>
+    <color name="list_background">#303030</color>
+    <color name="list_background_pressed">#992416</color>
+    <color name="list_divider">#272727</color>
+    <color name="counter_text_bg">#626262</color>
+    <color name="counter_text_color">#c5c4c4</color>
+
     <color name="main_color_gray_lt">#ffa1a1a1</color>
     <color name="light_black">#ff7a7070</color>
     <color name="red">#ffff0000</color>

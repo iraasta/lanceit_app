@@ -39,8 +39,7 @@ public class LanceActivity extends Activity {
     }
 
     public boolean onOptionsItemSelected(MenuItem menuitem) {
-        if (menuitem.getItemId() == 0x102002c)
-        {
+        if (menuitem.getItemId() == 0x102002c){
             finish();
         }
         return super.onOptionsItemSelected(menuitem);

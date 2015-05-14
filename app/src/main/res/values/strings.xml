@@ -40,8 +40,6 @@
     <string name="add_lance_title">Title</string>
     <string name="add_lance_price">Price (PLN)</string>
 
-    <string name="drawer_open">Open</string>
-    <string name="drawer_close">Close</string>
     <string name="email_1">E-mail address</string>
     <string name="Password">........</string>
     <string name="signin">Sign in</string>
@@ -99,5 +97,6 @@ Enjoy Australian natural native animals in their natural habitat,spectecular sce
     <string name="phone_number_activation">Wpisz numer telefonu</string>
     <string name="activation_phone_number_prompt">Potwierdź swój numer telefonu</string>
     <string name="login_logo_desc">Logo</string>
+    <string name="placeHolder">placeHolder</string>
 
 </resources>

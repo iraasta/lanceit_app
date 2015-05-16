@@ -20,21 +20,6 @@ public class User {
         this.email = email;
     }
 
-    public static User parseFromJSON(JSONObject userInJSON){
-        try {
-            return new User(
-                    userInJSON.getString("username"),
-                    userInJSON.getLong("phoneNumber"),
-                    userInJSON.getString("firstName"),
-                    userInJSON.getString("lastName"),
-                    userInJSON.getString("email")
-                    );
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
     public String getUsername() {
         return username;
     }

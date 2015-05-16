@@ -1,15 +1,22 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-    </style>
     <style name="noActionBar" parent="Theme.AppCompat.Light.NoActionBar">
 
     </style>
-    <!--<style name="AppBaseTheme" parent="@android:style/Widget.WebTextView" />-->
-    <style name="AppBaseTheme" />
-    <!--<style name="AppTheme" parent="@*android:style/WindowTitleBackground" />-->
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+        <item name="actionBarStyle">@style/MyActionBar</item>
+    </style>
+
+    <!-- ActionBar styles -->
+    <style name="MyActionBar"
+        parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="android:background"  tools:ignore="NewApi">@color/action_bar_theme</item>
+        <item name="background">@color/action_bar_theme</item>
+    </style>
+
     <style name="editext_normal" parent="@android:style/Widget.EditText">
         <item name="android:textSize">@dimen/txt_16sp</item>
         <item name="android:ems">10</item>
@@ -19,10 +26,13 @@
         <item name="android:minWidth">1.0dip</item>
         <item name="android:minHeight">1.0dip</item>
     </style>
-    <style name="MyTheme" parent="@style/AppBaseTheme">
+    <!--<style name="MyTheme" >
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:homeAsUpIndicator">@drawable/ic_drawer</item>
-    </style>
+        <item name="android:background">#59BC72</item>
+    </style>-->
+
+    <!--Dialog-->
     <style name="Theme.CustomDialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowBackground">@drawable/transparent</item>
         <item name="android:windowNoTitle">true</item>

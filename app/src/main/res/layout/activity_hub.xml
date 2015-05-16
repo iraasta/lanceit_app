@@ -13,13 +13,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/bg1"
-            tools:context="com.lanceit.haito.lanceit.activities.HubActivity">
+            tools:context="com.lanceit.haito.lanceit.view.hub.HubActivity">
 
             <android.support.v4.view.PagerTitleStrip
                 android:id="@+id/pager_strip"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/primary_material_dark"
+                android:background="@color/action_bar_theme"
                 android:paddingBottom="10dp"
                 android:paddingTop="10dp" />
         </android.support.v4.view.ViewPager>
@@ -30,13 +30,14 @@
         android:id="@+id/drawerPane"
         android:layout_width="280dp"
         android:layout_height="match_parent"
+        android:background="@color/dark_green_bg"
         android:layout_gravity="start">
         <!-- Profile Box -->
         <RelativeLayout
             android:id="@+id/profileBox"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="@color/material_blue_grey_800"
+            android:background="@color/action_bar_theme"
             android:padding="8dp">
 
             <ImageView
@@ -65,12 +66,11 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/desc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
                     android:layout_marginTop="4dp"
-                    android:text="View Profile"
+                    android:text="@string/view_profile"
                     android:textColor="#fff"
                     android:textSize="12sp" />
             </LinearLayout>
@@ -80,9 +80,18 @@
             android:id="@+id/list_slidermenu"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/profileBox"
-            android:background="@android:color/white"
-            android:choiceMode="singleChoice" />
+            android:layout_below="@+id/profileBox" />
+        <TextView
+            android:id="@+id/logout_button"
+            android:layout_alignParentBottom="true"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_top_only"
+            android:padding="10dp"
+            android:gravity="center"
+            android:textColor="@color/light_green_kfc"
+            android:textSize="@dimen/standard_text_button"
+            android:text="@string/logout_text"/>
     </RelativeLayout>
 
 </android.support.v4.widget.DrawerLayout>

@@ -29,7 +29,7 @@
     <string name="title_activity_detais"> Detale </string>
     <string name="title_section_add">Dodaj zlecenie</string>
     <string name="title_section_listAll">Przeglądaj</string>
-    <string name="title_section_myList">Twoje zlecenia</string>
+    <string name="title_section_myList">Mapa Zleceń</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -98,5 +98,8 @@ Enjoy Australian natural native animals in their natural habitat,spectecular sce
     <string name="activation_phone_number_prompt">Potwierdź swój numer telefonu</string>
     <string name="login_logo_desc">Logo</string>
     <string name="placeHolder">placeHolder</string>
+    <string name="title_activity_profile">ProfileActivity</string>
+    <string name="view_profile">View Profile</string>
+    <string name="logout_text">Wyloguj</string>
 
 </resources>

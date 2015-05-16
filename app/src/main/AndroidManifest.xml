@@ -4,15 +4,12 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
@@ -23,31 +20,51 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
+            android:windowSoftInputMode="stateHidden"
             android:name=".loginActivity"
-            android:theme="@style/noActionBar"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:theme="@style/noActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
-            android:theme="@style/noActionBar"
-            android:name=".activities.RegisterActivity"
+            android:name=".view.RegisterActivity"
             android:label="@string/title_activity_register"
-            android:parentActivityName=".loginActivity" >
+            android:parentActivityName=".loginActivity"
+            android:theme="@style/noActionBar" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.lanceit.haito.lanceit.loginActivity" />
         </activity>
         <activity
-            android:name=".activities.HubActivity"
+            android:windowSoftInputMode="stateHidden"
+            android:launchMode="singleTop"
+            android:name=".view.hub.HubActivity"
             android:label="@string/title_activity_hub" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.lanceit.haito.lanceit.loginActivity" />
         </activity>
         <activity
-            android:name=".activities.LanceActivity"
+            android:windowSoftInputMode="stateHidden"
+            android:name=".view.LanceActivity"
             android:label="@string/title_activity_detais" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.lanceit.haito.lanceit.view.hub.HubActivity" />
+        </activity>
+        <activity
+            android:windowSoftInputMode="stateHidden"
+            android:name=".view.ProfileActivity"
+            android:label="@string/title_activity_profile"
+            android:parentActivityName=".view.hub.HubActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.lanceit.haito.lanceit.view.hub.HubActivity" />
         </activity>
     </application>
 

@@ -1,4 +1,4 @@
-package com.lanceit.haito.lanceit.view.adapter;
+package com.lanceit.haito.lanceit.view.hub.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.lanceit.haito.lanceit.R;
-import com.lanceit.haito.lanceit.activities.HubActivity;
+import com.lanceit.haito.lanceit.view.hub.HubActivity;
 import com.lanceit.haito.lanceit.model.FeedItem;
 import com.lanceit.haito.lanceit.utils.GeoLocationManager;
 

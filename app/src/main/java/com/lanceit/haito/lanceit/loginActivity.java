@@ -12,8 +12,8 @@ import android.widget.EditText;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
-import com.lanceit.haito.lanceit.activities.HubActivity;
-import com.lanceit.haito.lanceit.activities.RegisterActivity;
+import com.lanceit.haito.lanceit.view.hub.HubActivity;
+import com.lanceit.haito.lanceit.view.RegisterActivity;
 import com.lanceit.haito.lanceit.activities.dialog.PhoneActivationDialog;
 import com.lanceit.haito.lanceit.network.loginHandler.LoginHandler;
 import com.lanceit.haito.lanceit.refference.DataStorage;
@@ -100,7 +100,7 @@ public class loginActivity extends FragmentActivity
         Intent myIntent = new Intent(loginActivity.this, HubActivity.class);
 
         Bundle bundle = new Bundle();
-        bundle.putString("json",extras);
+        bundle.putString("user",extras);
 
         myIntent.putExtras(bundle);
         startActivity(myIntent);

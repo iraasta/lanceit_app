@@ -3,7 +3,7 @@ package com.lanceit.haito.lanceit.utils.validation;
 import com.lanceit.haito.lanceit.R;
 import com.lanceit.haito.lanceit.utils.CommonUtilities;
 import com.lanceit.haito.lanceit.utils.MyToast;
-import com.lanceit.haito.lanceit.view.hubFragments.AddFragment;
+import com.lanceit.haito.lanceit.view.hub.hubFragments.AddFragment;
 
 public class NewLanceDataValidator {
     private AddFragment fragmentRefference;

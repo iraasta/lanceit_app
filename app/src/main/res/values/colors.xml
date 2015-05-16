@@ -12,6 +12,11 @@
     <color name="bot">#30F247</color>
     <color name="register_background">#7e7e7e</color>
 
+    <color name="action_bar_theme">#52BC72</color>
+
+    <color name="dark_green_bg">#42584B</color>
+    <color name="light_green_kfc">#4Ab02F</color>
+
     <array name="letter_tile_colors">
         <item>#f16364</item>
         <item>#f58559</item>

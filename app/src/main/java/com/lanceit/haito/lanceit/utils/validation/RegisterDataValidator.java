@@ -3,7 +3,7 @@ package com.lanceit.haito.lanceit.utils.validation;
 import android.content.Context;
 
 import com.lanceit.haito.lanceit.R;
-import com.lanceit.haito.lanceit.activities.RegisterActivity;
+import com.lanceit.haito.lanceit.view.RegisterActivity;
 import com.lanceit.haito.lanceit.refference.Validation;
 import com.lanceit.haito.lanceit.utils.MyToast;
 

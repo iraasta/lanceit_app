@@ -1,4 +1,4 @@
-package com.lanceit.haito.lanceit.activities;
+package com.lanceit.haito.lanceit.view;
 
 import android.content.Context;
 import android.os.Bundle;

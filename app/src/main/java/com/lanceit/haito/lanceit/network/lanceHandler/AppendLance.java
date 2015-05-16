@@ -5,11 +5,11 @@ import android.util.Log;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.lanceit.haito.lanceit.activities.HubActivity;
+import com.lanceit.haito.lanceit.view.hub.HubActivity;
 import com.lanceit.haito.lanceit.network.model.ModelJSONFragmentHandler;
 import com.lanceit.haito.lanceit.refference.Connections;
 import com.lanceit.haito.lanceit.utils.GeoLocationManager;
-import com.lanceit.haito.lanceit.view.hubFragments.AddFragment;
+import com.lanceit.haito.lanceit.view.hub.hubFragments.AddFragment;
 
 import org.json.JSONException;
 import org.json.JSONObject;

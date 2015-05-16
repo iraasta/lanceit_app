@@ -1,6 +1,7 @@
-package com.lanceit.haito.lanceit.activities;
+package com.lanceit.haito.lanceit.view.hub;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.location.LocationManager;
@@ -23,18 +24,19 @@ import android.widget.RelativeLayout;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import com.lanceit.haito.lanceit.R;
+import com.lanceit.haito.lanceit.loginActivity;
 import com.lanceit.haito.lanceit.model.User;
 import com.lanceit.haito.lanceit.utils.GeoLocationManager;
-import com.lanceit.haito.lanceit.view.PageTransformer;
+import com.lanceit.haito.lanceit.view.ProfileActivity;
 import com.lanceit.haito.lanceit.view.drawer.adapter.DrawerListAdapter;
 import com.lanceit.haito.lanceit.view.drawer.model.DrawerItem;
-import com.lanceit.haito.lanceit.view.hubFragments.AddFragment;
-import com.lanceit.haito.lanceit.view.hubFragments.LanceListFragment;
-import com.lanceit.haito.lanceit.view.hubFragments.ListAllFragment;
-
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.lanceit.haito.lanceit.view.hub.hubFragments.AddFragment;
+import com.lanceit.haito.lanceit.view.hub.hubFragments.LanceListFragment;
+import com.lanceit.haito.lanceit.view.hub.hubFragments.ListAllFragment;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -58,6 +60,10 @@ public class HubActivity extends ActionBarActivity implements AddFragment.OnFrag
     // used to store app title
     private CharSequence mTitle;
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,17 +72,15 @@ public class HubActivity extends ActionBarActivity implements AddFragment.OnFrag
 
         requestQueue = Volley.newRequestQueue(HubActivity.this);
 
-        try {
-            this.loggedUser = User.parseFromJSON(new JSONObject(getIntent().getStringExtra("json")));
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        this.loggedUser = new Gson().fromJson(getIntent().getExtras().getString("user"),
+                new TypeToken<User>() {}.getType());
 
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
         ViewPager mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+        mViewPager.setCurrentItem(1);
 
         PagerTitleStrip pagerTitleStrip = (PagerTitleStrip) findViewById(R.id.pager_strip);
         pagerTitleStrip.setTextColor(0xFFFFFFFF);
@@ -102,7 +106,7 @@ public class HubActivity extends ActionBarActivity implements AddFragment.OnFrag
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.list_slidermenu);
 
-        ArrayList<DrawerItem> navDrawerItems = populateList(navMenuTitles,navMenuIcons);
+        ArrayList<DrawerItem> navDrawerItems = populateList(navMenuTitles, navMenuIcons);
 
         // Recycle the typed array
         navMenuIcons.recycle();
@@ -134,6 +138,24 @@ public class HubActivity extends ActionBarActivity implements AddFragment.OnFrag
             }
         };
         mDrawerLayout.setDrawerListener(mDrawerToggle);
+
+        findViewById(R.id.profileBox).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent next = new Intent(HubActivity.this, ProfileActivity.class);
+                next.putExtra("user", new Gson().toJson(loggedUser));
+                startActivity(next);
+            }
+        });
+
+        findViewById(R.id.logout_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent next = new Intent(HubActivity.this, loginActivity.class);
+                startActivity(next);
+                finish();
+            }
+        });
     }
 
     @Override
@@ -210,7 +232,6 @@ public class HubActivity extends ActionBarActivity implements AddFragment.OnFrag
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
             return 3;
         }
 
@@ -228,17 +249,20 @@ public class HubActivity extends ActionBarActivity implements AddFragment.OnFrag
             return null;
         }
     }
+
     public RequestQueue getRequestQueue() {
         return requestQueue;
     }
+
     public GeoLocationManager getMyLocationManager() {
         return myLocationManager;
     }
+
     public SectionsPagerAdapter getmSectionsPagerAdapter() {
         return mSectionsPagerAdapter;
     }
 
-    private ArrayList<DrawerItem> populateList(String[] navMenuTitles, TypedArray navMenuIcons){
+    private ArrayList<DrawerItem> populateList(String[] navMenuTitles, TypedArray navMenuIcons) {
         ArrayList<DrawerItem> navDrawerItems = new ArrayList<>();
 
         navDrawerItems.add(new DrawerItem(navMenuTitles[0], navMenuIcons.getResourceId(0, -1)));

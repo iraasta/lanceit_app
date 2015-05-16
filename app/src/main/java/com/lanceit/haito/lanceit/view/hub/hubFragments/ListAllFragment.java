@@ -1,19 +1,16 @@
-package com.lanceit.haito.lanceit.view.hubFragments;
+package com.lanceit.haito.lanceit.view.hub.hubFragments;
 
 import android.app.Activity;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
 import com.lanceit.haito.lanceit.R;
-import com.lanceit.haito.lanceit.activities.HubActivity;
-import com.lanceit.haito.lanceit.network.lanceHandler.ListAllLances;
+import com.lanceit.haito.lanceit.view.hub.HubActivity;
 
 public class ListAllFragment extends Fragment {
     private HubActivity parentActivity;

@@ -1,4 +1,4 @@
-package com.lanceit.haito.lanceit.view.hubFragments;
+package com.lanceit.haito.lanceit.view.hub.hubFragments;
 
 import android.app.Activity;
 import android.net.Uri;
@@ -14,7 +14,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.lanceit.haito.lanceit.R;
-import com.lanceit.haito.lanceit.activities.HubActivity;
+import com.lanceit.haito.lanceit.view.hub.HubActivity;
 import com.lanceit.haito.lanceit.network.lanceHandler.AppendLance;
 import com.lanceit.haito.lanceit.utils.validation.NewLanceDataValidator;
 

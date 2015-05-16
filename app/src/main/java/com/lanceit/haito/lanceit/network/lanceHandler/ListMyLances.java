@@ -5,7 +5,7 @@ import android.content.Context;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
-import com.lanceit.haito.lanceit.activities.HubActivity;
+import com.lanceit.haito.lanceit.view.hub.HubActivity;
 import com.lanceit.haito.lanceit.network.model.ModelCleanStringHandler;
 import com.lanceit.haito.lanceit.refference.Connections;
 

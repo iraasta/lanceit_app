@@ -1,4 +1,4 @@
-package com.lanceit.haito.lanceit.view;
+package com.lanceit.haito.lanceit.view.hub;
 
 import android.view.View;
 

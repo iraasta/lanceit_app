@@ -1,19 +1,17 @@
 package com.lanceit.haito.lanceit.network.lanceHandler;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.lanceit.haito.lanceit.activities.HubActivity;
+import com.lanceit.haito.lanceit.view.hub.HubActivity;
 import com.lanceit.haito.lanceit.model.FeedItem;
 import com.lanceit.haito.lanceit.network.model.ModelCleanStringHandler;
 import com.lanceit.haito.lanceit.refference.Connections;
 import com.lanceit.haito.lanceit.utils.SerializationHelper;
-import com.lanceit.haito.lanceit.view.hubFragments.LanceListFragment;
-import com.lanceit.haito.lanceit.view.hubFragments.ListAllFragment;
+import com.lanceit.haito.lanceit.view.hub.hubFragments.LanceListFragment;
 
 import org.json.JSONArray;
 import org.json.JSONException;

@@ -6,7 +6,7 @@ import android.util.Log;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.lanceit.haito.lanceit.activities.RegisterActivity;
+import com.lanceit.haito.lanceit.view.RegisterActivity;
 import com.lanceit.haito.lanceit.network.model.ModelJSONHandler;
 import com.lanceit.haito.lanceit.refference.Connections;
 import com.lanceit.haito.lanceit.utils.MyToast;

@@ -1,4 +1,4 @@
-package com.lanceit.haito.lanceit.view.hubFragments;
+package com.lanceit.haito.lanceit.view.hub.hubFragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,12 +12,11 @@ import android.widget.ListView;
 
 import com.google.gson.Gson;
 import com.lanceit.haito.lanceit.R;
-import com.lanceit.haito.lanceit.activities.HubActivity;
-import com.lanceit.haito.lanceit.activities.LanceActivity;
+import com.lanceit.haito.lanceit.view.hub.HubActivity;
+import com.lanceit.haito.lanceit.view.LanceActivity;
 import com.lanceit.haito.lanceit.model.FeedItem;
-import com.lanceit.haito.lanceit.model.Location;
 import com.lanceit.haito.lanceit.network.lanceHandler.ListAllLances;
-import com.lanceit.haito.lanceit.view.adapter.LanceAdapter;
+import com.lanceit.haito.lanceit.view.hub.adapter.LanceAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
